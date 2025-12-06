@@ -245,6 +245,9 @@ li.dropdown.open .dropdown-menu {
     flex-direction: column;
     gap: 20px;
   }
+  .navBar .logo{
+    margin-left: 2px;
+  }
   .navLinks{
     display: flex;
     flex-direction: column;
@@ -494,6 +497,7 @@ li.dropdown.open .dropdown-menu {
   .hero-content {
     margin-top:330px;
     margin-left:45px;
+    /* width: 90%; */
   }
 
   .hero-content h1 {
@@ -509,7 +513,7 @@ li.dropdown.open .dropdown-menu {
   }
 
   .contact-btn{
-    margin-left: 50px;
+    margin-left: 2px;
   }
 }
 

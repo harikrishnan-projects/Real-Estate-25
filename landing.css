@@ -4,6 +4,15 @@
   box-sizing: border-box;
   
 }
+/* FIX unwanted right-side extra space */
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+* {
+    box-sizing: border-box;
+}
 
 /* ===== General Styles ===== */
 body {
@@ -150,6 +159,9 @@ span{
     display:flex;
     flex-direction: column;
     gap: 20px;
+  }
+  .navBar .logo{
+    margin-left: 2px;
   }
   .navLinks{
     display: flex;

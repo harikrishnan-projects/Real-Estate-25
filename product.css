@@ -4,16 +4,25 @@
   box-sizing: border-box;
   
 }
+/* FIX unwanted right-side extra space */
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+* {
+    box-sizing: border-box;
+}
 
 /* ===== General Styles ===== */
 body {
   font-family: Arial, sans-serif;  
   line-height: 1.6;
-  background: url('./home\ 2\ bc\ img.jpeg')no-repeat center center / cover fixed;
+  background: url('./service\ bc\ img.jpeg')no-repeat center center / cover fixed;
 }
 
 span{
-  color:rgb(44, 103, 93);
+  color:#ffcc00;
 }
 
 .hamburger{
@@ -30,8 +39,7 @@ span{
   flex-direction: row;
   gap: 100px;
   margin-top: 20px;
-  background: linear-gradient(135deg,rgb(50, 113, 102),rgb(37, 87, 75));
-  /* background: linear-gradient(135deg,rgb(45, 105, 95),rgb(37, 87, 75));  */
+  background: linear-gradient(135deg,rgb(46, 105, 93),rgb(29, 77, 65)); 
   position: sticky;
   top: 0;
   z-index: 9999;
@@ -98,7 +106,6 @@ span{
   border: 1px solid #ccc;
   border-radius: 5px;
   height: 40px;
-  margin-top:17px;
 }
 
 /* SignIn Button Styling */
@@ -116,8 +123,8 @@ span{
 }
 
 .linkRight button:hover {
-  /* background-color:rgb(2, 49, 39); */
-  background-color:rgb(5, 62, 49);
+  background-color:rgb(5, 67, 52);
+  /* background-color:rgb(4, 68, 54); */
   color: white;
 }
 
@@ -152,6 +159,9 @@ span{
     display:flex;
     flex-direction: column;
     gap: 20px;
+  }
+  .navBar .logo{
+    margin-left: 2px;
   }
   .navLinks{
     display: flex;
@@ -191,13 +201,14 @@ span{
   }
 
   .linkRight button {
-    width: 27%;
+    width:27%;
   }
 
   .logo{
     margin-left: 140px;
   }
 }
+
 
 
 
@@ -311,6 +322,24 @@ span{
 
   margin-left: 190px;
 }
+
+
+/* inline error styling */
+.hero-error {
+  display: block;
+  margin-top: 8px;
+  color: #ffb3b3;      /* soft red */
+  font-size: 0.95rem;
+  min-height: 1.2em;   /* reserve space to avoid layout jump */
+}
+
+/* optional small visual cue for invalid input */
+input.invalid, select.invalid {
+  border-color: #ff8b8b;
+  box-shadow: 0 0 0 3px rgba(255,139,139,0.06);
+}
+
+
 
 /* 📱 Responsive Styles for Small Screens (≤ 450px) */
 @media (max-width: 450px) {

@@ -11,6 +11,61 @@ hamburger.addEventListener("click", ()=>{
 
 
 
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("hero-search-form");
+  const input = document.getElementById("hero-search-input");
+  const category = document.getElementById("hero-search-category");
+  const errorEl = document.getElementById("hero-search-error");
+
+  // simple validation rules:
+  // - search must be non-empty and at least 2 characters
+  // - you can extend with regex for postal code if needed
+  function validate() {
+    const value = input.value.trim();
+    // reset styles
+    input.classList.remove("invalid");
+    category.classList.remove("invalid");
+    errorEl.textContent = "";
+
+    if (value.length < 2) {
+      input.classList.add("invalid");
+      errorEl.textContent = "Please fill valid details (enter at least 2 characters).";
+      return false;
+    }
+
+    // optionally: if you want to require a category selection uncomment next
+    // if (category.value === "") {
+    //   category.classList.add("invalid");
+    //   errorEl.textContent = "Please select a property type.";
+    //   return false;
+    // }
+
+    return true;
+  }
+
+  form.addEventListener("submit", (ev) => {
+    ev.preventDefault();
+    if (!validate()) {
+      // invalid — do not navigate
+      return;
+    }
+
+    // valid — per your requirement navigate to error.html (404)
+    window.location.href = "./error.html";
+  });
+
+  // optional: live validation / clear error while typing
+  input.addEventListener("input", () => {
+    if (input.classList.contains("invalid")) {
+      validate();
+    } else {
+      errorEl.textContent = "";
+    }
+  });
+});
+
+
+
 
 
 
@@ -61,3 +116,14 @@ hamburger.addEventListener("click", ()=>{
     }, { threshold: 0.2 });
     els.forEach(el=>io.observe(el));
   })();
+
+
+
+
+  
+
+
+
+
+
+

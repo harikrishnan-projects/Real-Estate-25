@@ -159,6 +159,12 @@ span{
     flex-direction: column;
     gap: 20px;
   }
+  .navBar .logo{
+    margin-left: 2px;
+  }
+  .navBar .logo{
+    margin-left: 2px;
+  }
   .navLinks{
     display: flex;
     flex-direction: column;
@@ -795,6 +801,9 @@ p::after {
 
 /* Responsive Design */
 @media (max-width: 600px) {
+  .contact-form form button {
+    margin-left: 30px;
+  }
   .faq {
     padding: 1rem;
   }

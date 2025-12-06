@@ -8,8 +8,13 @@
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  background-color:rgb(34, 82, 70);
-  /* background: url('./blog\ bc\ img\ 1.jpeg') no-repeat center center / cover fixed; */
+  /* background-color: #f9f9f9; */
+  background: url('./service\ bc\ img.jpeg') no-repeat center center / cover fixed;
+}
+
+span{
+  color: #ffcc00;
+  font-weight: bold;
 }
 
 .hamburger{
@@ -22,12 +27,13 @@ body {
 
 .navBar{
   /* background-color: rgb(47, 101, 87); */
-  background: linear-gradient(to right, rgb(34, 82, 70), rgb(34, 82, 70));
+  background: linear-gradient(to right, rgb(48, 110, 97), rgb(33, 82, 70));
   display: flex;
   flex-direction: row;
-  gap:120px;
+  gap: 120px;
   margin-top: 20px;
-  height:130px;
+  
+
   position: sticky;
   top: 0;
   z-index: 9999;
@@ -85,7 +91,7 @@ body {
   font-weight:bold;
 }
 
-.linkLeft a:hover {
+.linkLeft a.active {
   color:#ffcc00; /* Highlight active link */
 }
 
@@ -140,12 +146,18 @@ body {
     padding: 20px;
 
     position: static;
-    background-color:transparent;
+    background-color: transparent;
   }
   .navBar.active{
     display:flex;
     flex-direction: column;
     gap: 20px;
+  }
+  .navBar .logo{
+    margin-left: 2px;
+  }
+  .navBar .logo{
+    margin-left: 2px;
   }
   .navLinks{
     display: flex;
@@ -177,6 +189,7 @@ body {
   .linkRight input[type="search"] {
     width: 70%;
   }
+
   .linkRight button:hover {
   background-color:rgb(2, 51, 40);
   color: white;
@@ -581,13 +594,14 @@ span{
 
   .blog-grid {
     flex-direction: column;
-    width: 400px;
+    width: 300px;
     gap: 25px;
     margin-left:25px;
   }
 
   .blog-card {
-    flex: 1 1 100%;
+    flex: 1 1 60%;
+    /* margin-left: 2px; */
   }
 
   .blog-card img {

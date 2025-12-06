@@ -4,6 +4,15 @@
   box-sizing: border-box;
   
 }
+/* FIX unwanted right-side extra space */
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+* {
+    box-sizing: border-box;
+}
 
 /* ===== General Styles ===== */
 body {
@@ -150,6 +159,9 @@ span{
     display:flex;
     flex-direction: column;
     gap: 20px;
+  }
+  .navBar .logo{
+    margin-left: 2px;
   }
   .navLinks{
     display: flex;
@@ -345,7 +357,7 @@ span{
     clip-path: none; /* Remove angled background for small screens */
     text-align: center;
     width: 400px;
-    margin-left: 25px;
+    margin-left: 2px;
     margin-top: 150px;
   }
 
@@ -358,12 +370,14 @@ span{
   .hero-text h1 {
     font-size: 1.8rem;  /* Reduce font size */
     line-height: 1.3;
+    width: 300px;
   }
 
   .hero-text p {
     font-size: 1rem;
     max-width: 100%;
     margin: 0 auto 20px;
+    width: 300px;
   }
 
   .hero-btn {
@@ -520,6 +534,10 @@ span{
 @media (max-width: 900px) {
   .booking-wrapper {
     grid-template-columns: 1fr;
+  }
+
+  .booking-form h3{
+    margin-left: 2px;
   }
 }
 
