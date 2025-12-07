@@ -43,15 +43,14 @@
 
 
 
-<!-- section 01 -->
 <section class="valuation">
   <h2>Wondering What Your Home Is Worth?</h2>
   <p>Enter your address below, and we'll provide a personalized market valuation report—fast, free, and no commitment.</p>
+
+  <!-- removed onclick from button -->
   <form class="valuation-form">
     <input type="text" name="address" placeholder="Enter Your Property Address" required />
-    <button type="submit" class="pulse-button" 
-      onclick="window.location.href='./error.html'">Get My Home Valuation
-    </button>
+    <button type="submit" class="pulse-button">Get My Home Valuation</button>
   </form>
 </section>
 
@@ -69,9 +68,8 @@
   <!-- Search Bar -->
   <form class="property-search-form">
     <input type="text" name="search" placeholder="Enter city, neighborhood, or listing ID" required />
-    <button type="submit" 
-      onclick="window.location.href='./error.html'">Search
-    </button>
+    <!-- removed onclick from button -->
+    <button type="submit">Search</button>
   </form>
 
   <!-- Featured Property Cards -->
@@ -273,10 +271,10 @@
 
 
 
-<!-- section 07 -->
 <section class="lead-capture">
   <h2>Request a Consultation</h2>
   <p>Fill in your details and we'll get back to you within 24 hours.</p>
+
   <form class="lead-form">
     <input type="text" name="name" placeholder="Your Name" required />
     <input type="email" name="email" placeholder="Your Email" required />
@@ -286,11 +284,13 @@
       <option value="buyer">Potential Buyer</option>
       <option value="seller">Home Seller</option>
     </select>
-    <button type="submit" onclick="window.location.href='./error.html'">
-      Submit
-    </button>
+
+    <!-- removed onclick -->
+    <button type="submit">Submit</button>
   </form>
 </section>
+
+
 
 
 
