@@ -35,23 +35,12 @@ span{
   z-index: 9999;
 }
 
-.logo{
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-  margin-left: 90px;
-  align-items: center;
-}
-
-.logo img {
-  height: 80px;
-  width: 80px;
-}
-
-.logo h3{
-  color:#ffcc00;
-  font-size: 30px;
-}
+/* Brand & right */
+.right { display: flex; align-items: center; gap: 80px; flex: 0 0 auto; min-width: 0; }
+.brand { display:flex; align-items:center; gap:1px; text-decoration:none; color:inherit; flex: 0 0 auto; }
+.brand img { width:80px; height:80px; border-radius:6px; object-fit:contain; }
+.brand-title { display:flex; flex-direction:column; line-height:1; }
+.brand-title .title { font-weight:700; font-size:30px; color: rgb(255, 204, 0); }
 
 .navLinks{
   display: flex;
@@ -62,7 +51,7 @@ span{
 .linkLeft{
   display: flex;
   flex-direction: row;
-  gap: 40px;
+  gap: 30px;
 
   position: relative;         /* Creates proper stacking context */
   z-index: 1000;              /* Ensures navbar background remains visible */
@@ -1372,7 +1361,7 @@ li.dropdown.open .dropdown-menu {
     grid-template-columns: 1fr; /* stack vertically */
     gap: 15px;
     padding: 10px;
-    margin-top: 100px;
+    margin-top: 130px;
   }
 
   .feature-card {
@@ -1421,7 +1410,7 @@ li.dropdown.open .dropdown-menu {
   display: flex;
   flex-wrap: wrap; /* Responsive */
   justify-content: space-between;
-  max-width: 1200px;
+  /* max-width: 1200px; */
   margin: auto;
   gap: 20px;
   background-color: white;
@@ -1429,8 +1418,21 @@ li.dropdown.open .dropdown-menu {
   border-radius: 20px;
 }
 
+.footer-container .name{
+  margin-top: -180px;
+  margin-right: 20px;
+}
+
+.footer-container .name .brand-title .title{
+  color:rgb(38, 89, 78);
+}
+
 .footer-container:hover{
   background-color:rgb(43, 93, 81);
+}
+
+.footer-container:hover .name .brand-title .title{
+  color: white;
 }
 
 /* Change text color of all headings inside on hover */
@@ -1564,13 +1566,69 @@ li.dropdown.open .dropdown-menu {
   color:black;
 }
 
-/* Responsive */
-@media (max-width:450px) {
+@media (max-width: 768px) {
+
+  /* Footer padding adjustment */
+  .footer {
+    padding: 40px 15px 15px;
+  }
+
+  /* Stack footer columns vertically */
   .footer-container {
     flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+    padding: 25px;
+  }
+
+  /* FIX brand/name overlap */
+  .footer-container .name {
+    margin: 0;                /* remove negative margin */
     text-align: center;
   }
+
+  .footer-container .name .brand-title .title {
+    font-size: 22px;
+  }
+
+  /* Footer columns full width */
+  .footer-col {
+    flex: 1 1 100%;
+    min-width: 100%;
+  }
+
+  /* Headings size */
+  .footer-col h2,
+  .footer-col h3 {
+    font-size: 18px;
+  }
+
+  /* Text size */
+  .footer-col p,
+  .footer-col ul li a {
+    font-size: 14px;
+  }
+
+  /* Center social icons */
   .social-links {
-    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+  }
+
+  .social-links a img {
+    width: 36px;
+    height: 36px;
+    margin: 0;
+  }
+
+  /* Footer bottom text */
+  .footer-bottom {
+    font-size: 13px;
+    margin-top: 15px;
+    text-align: center;
   }
 }
+
