@@ -19,10 +19,18 @@
       <span class="title">STACKLY</span>
     </div>
   </a>
+  
 
   <div class="navLinks">
     <ul class="linkLeft">
-      <li><a href="./home2.html">Home</a></li>
+      <li class="dropdown">
+        <a href="./home2.html">Home</a>
+        <ul class="dropdown-menu">
+          <li><a href="./index.html">Home Page 1</a></li>
+        </ul>
+      </li>
+
+      <!-- <li><a href="./index.html">Home</a></li> -->
       <li><a href="./product.html" class="active">Product</a></li>
       <li><a href="./landing.html">Landing</a></li>
       <li><a href="./content.html">Content</a></li>
@@ -30,16 +38,16 @@
       <li><a href="./dashboard.html">Dashboard</a></li>
     </ul>
 
+
     <ul class="linkRight">
       <li>
         <input type="search" placeholder="Products">
-        <button>Search</button>
+        <button onclick="window.location.href='./error.html'">Search</button>
       </li>
-      <button onclick="window.location.href='signIn.html'">SignIn</button>
+      <button onclick="window.location.href='signIn.html'"> Log / Sign In</button>
     </ul>
   </div>
 </nav>
-
 
 
 

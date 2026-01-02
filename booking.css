@@ -1,200 +1,188 @@
+/* ===============================
+   RESET
+================================ */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  
 }
-/* FIX unwanted right-side extra space */
+
 html, body {
-    width: 100%;
-    overflow-x: hidden;
+  width: 100%;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
 }
 
-* {
-    box-sizing: border-box;
-}
-
-/* ===== General Styles ===== */
 body {
-  font-family: Arial, sans-serif;  
-  line-height: 1.6;
-  background: url('./home\ 2\ bc\ img.jpeg')no-repeat center center / cover fixed;
+  background-color: rgb(37, 87, 75);
 }
 
-span{
-  color:#ffcc00;
+span {
+  color: #ffcc00;
+  font-weight: bold;
 }
 
-.hamburger{
+/* ===============================
+   HAMBURGER
+================================ */
+.hamburger {
   display: none;
+  font-size: 32px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
 }
 
-.navBar{
-  display:inline-block;
-}
-
-.navBar{
-  /* background-color: rgb(47, 101, 87); */
+/* ===============================
+   NAVBAR (DESKTOP)
+================================ */
+.navBar {
+  background-color: rgb(37, 87, 75);
   display: flex;
-  flex-direction: row;
-  gap: 100px;
-  margin-top: 20px;
-  background: linear-gradient(135deg,rgb(45, 105, 95),rgb(37, 87, 75)); 
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
   position: sticky;
   top: 0;
   z-index: 9999;
 }
 
-/* Brand & right */
-.right { display: flex; align-items: center; gap: 80px; flex: 0 0 auto; min-width: 0; }
-.brand { display:flex; align-items:center; gap:1px; text-decoration:none; color:inherit; flex: 0 0 auto; }
-.brand img { width:80px; height:80px; border-radius:6px; object-fit:contain; }
-.brand-title { display:flex; flex-direction:column; line-height:1; }
-.brand-title .title { font-weight:700; font-size:30px; color: rgb(255, 204, 0); }
-
-.navLinks{
-  display: flex;
-  flex-direction: row;
-  gap: 80px;
-}
-
-.linkLeft{
-  display: flex;
-  flex-direction: row;
-  gap: 40px;
-}
-
-.linkRight{
-  display: flex;
-  flex-direction: row;
-  gap: 40px;
-}
-
-.linkLeft, .linkRight {
+/* Brand */
+.brand {
   display: flex;
   align-items: center;
-
-  list-style: none;
-  padding: 0;
-  margin: 0;
+  text-decoration: none;
+  color: white;
 }
 
-.linkLeft a, .linkRight a {
+.brand img {
+  width: 70px;
+  height: 70px;
+}
+
+.brand-title .title {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+/* Nav Links */
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+/* Left Links */
+.linkLeft,
+.linkRight {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  list-style: none;
+}
+
+.linkLeft li {
+  position: relative;
+}
+
+.linkLeft a {
   text-decoration: none;
-  color:white;
-  font-weight:bold;
+  color: white;
+  font-weight: bold;
 }
 
 .linkLeft a:hover {
-  color:#ffcc00; /* Highlight active link */
+  color: #ffcc00;
 }
 
-/* Search Input Styling */
-.linkRight input[type="search"] {
-  padding: 5px 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+/* Dropdown */
+li.dropdown > a::after {
+  content: " ▾";
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: rgb(2, 51, 40);
+  width: 160px;
+  list-style: none;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 12px;
+  color: white;
+  
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* Right side */
+.linkRight input {
   height: 40px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  border: none;
 }
 
-/* SignIn Button Styling */
 .linkRight button {
-  padding: 6px 15px;
+  height: 40px;
+  width: 140px;
   border: none;
   background-color: #ffcc00;
-  color:black;
-  /* border-radius: 5px; */
-  cursor: pointer;
   font-weight: bold;
-  height: 40px;
-  width: 130px;
-  border-bottom-right-radius: 40px;
+  cursor: pointer;
 }
 
 .linkRight button:hover {
-  background-color:rgb(5, 67, 52);
-  /* background-color:rgb(4, 68, 54); */
+  background-color: rgb(2, 49, 39);
   color: white;
 }
-
-/* Hamburger Button */
-.hamburger {
-  display: none;
-  font-size: 28px;
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: white;
+li.dropdown.open .dropdown-menu {
+  display: block;
 }
+/* ===============================
+   TABLET + MOBILE (FIX)
+================================ */
+@media (max-width: 1024px) {
 
-/* Mobile Styles */
-@media (max-width: 450px) {
   .hamburger {
     display: block;
-    font-size: 40px;
   }
 
-  .navBar{
-    display: none;
+  .navBar {
     flex-direction: column;
     align-items: flex-start;
-    gap: 10px;
-    padding: 20px;
+  }
 
-    position: static;
-    background-color:transparent;
-  }
-  .navBar.active{
-    display:flex;
+  .navLinks {
+    display: none;
     flex-direction: column;
-    gap: 20px;
-  }
-  .navBar .logo{
-    margin-left: 2px;
-  }
-  .navLinks{
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
     width: 100%;
-    margin-top: 40px;
+    gap: 30px;
+    margin-top: 20px;
   }
-  .linkLeft{
+
+  .navBar.active .navLinks {
     display: flex;
+  }
+
+  .linkLeft,
+  .linkRight {
     flex-direction: column;
-    gap: 20px;
+    align-items: flex-start;
+    width: 100%;
   }
 
-  .linkLeft a:hover{
-    color: #ffcc00;
-  }
-  .linkRight{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    margin-top: 40px;
-  }
-  
-  .linkLeft, .linkRight {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .linkRight input[type="search"] {
-    width: 70%;
-  }
-
-  .linkRight button:hover {
-  background-color:rgb(2, 51, 40);
-  color: white;
-  }
-
-  .linkRight button {
-    width:27%;
-  }
-
-  .logo{
-    margin-left: 140px;
+  .dropdown-menu {
+    position: relative;
+    width: 100%;
   }
 }
 
